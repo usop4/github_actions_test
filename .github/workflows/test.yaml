@@ -25,3 +25,9 @@ jobs:
     
     - name: Execute Python script
       run: python hello.py  # 実行するPythonスクリプトのパスを指定します。
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: output.txt
