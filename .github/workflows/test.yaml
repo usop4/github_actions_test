@@ -1,0 +1,27 @@
+# .github/workflows/test.yml
+
+name: Generate File Hash
+
+on:
+  push:
+    branches:
+      - main  # マスターブランチの場合。適宜変更してください。
+  pull_request:
+    branches:
+      - main  # マスターブランチの場合。適宜変更してください.
+
+jobs:
+  generate_hash:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # 使用するPythonのバージョンを指定します。
+    
+    - name: Execute Python script
+      run: python hello.py  # 実行するPythonスクリプトのパスを指定します。
