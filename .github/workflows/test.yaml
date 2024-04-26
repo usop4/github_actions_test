@@ -5,10 +5,7 @@ name: Generate File Hash
 on:
   push:
     branches:
-      - main  # マスターブランチの場合。適宜変更してください。
-  pull_request:
-    branches:
-      - main  # マスターブランチの場合。適宜変更してください.
+      - main
 
 jobs:
   generate_hash:
@@ -21,13 +18,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.9'  # 使用するPythonのバージョンを指定します。
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
     
     - name: Execute Python script
-      run: python hello.py  # 実行するPythonスクリプトのパスを指定します。
+      run: python test.py
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: output.txt
+        path: test_basic_1.png
