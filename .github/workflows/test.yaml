@@ -1,6 +1,6 @@
 # .github/workflows/test.yml
 
-name: Generate File Hash
+name: Generate Gantt Chart with elegantt
 
 on:
   push:
