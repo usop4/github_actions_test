@@ -35,6 +35,18 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+　    - name: Set up Python
+  　    uses: actions/setup-python@v3
+    　  with:
+      　  python-version: '3.9'
+
+    　- name: Install dependencies
+      　run: pip install -r requirements.txt
+    
+    　- name: Execute Python script
+      　run: python test.py
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
