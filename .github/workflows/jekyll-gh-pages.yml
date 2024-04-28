@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Install fonts
-        run: curl -o ipaexg.ttf https://github.com/usop4/elegantt/raw/main/elegantt/tests/ipaexg/ipaexg.ttf
+        run: wget https://github.com/usop4/elegantt/raw/main/elegantt/tests/ipaexg/ipaexg.ttf
       - name: run test.py
         run: python test.py
 
